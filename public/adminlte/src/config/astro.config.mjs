@@ -17,9 +17,14 @@ export default defineConfig({
   cacheDir: './dist/pages',
   outDir: './dist/pages',
   vite: {
+    resolve: {
+      alias: {
+        '@components': '/src/html/components'
+      }
+    },
     server: {
       watch: {
-        ignored: ['!**/dist/**'],
+        ignored: ['!**/dist/**']
       }
     }
   }

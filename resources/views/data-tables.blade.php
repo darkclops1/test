@@ -1,6 +1,11 @@
 @extends('layouts.master')
 
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 @section('content')
+
+
 <div class="card">
   <div class="card-header">
     <h3 class="card-title">DataTable with default features</h3>
@@ -432,4 +437,24 @@
   </div>
   <!-- /.card-body -->
 </div>
+@endsection
+
+@section('scripts')
+<script>
+    $(document).ready(function () {
+        $('#example1').DataTable({
+            "responsive": true,
+            "autoWidth": false,
+            "paging": true,
+            "lengthChange": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "pageLength": 10,  // Sesuaikan jumlah data per halaman
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Indonesian.json" // Untuk localization bahasa Indonesia
+            }
+        });
+    });
+</script>
 @endsection
